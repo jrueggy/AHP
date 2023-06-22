@@ -2,25 +2,15 @@
 
     <CriteriaDisplay></CriteriaDisplay>
 
-     <v-layout>
-      <v-navigation-drawer
-        permanent
-        location="right"
-      >
-        
-        AHP
+    <v-divider></v-divider>
 
-        <v-divider></v-divider>
+    <MatrixDisplay></MatrixDisplay>
 
-        PROCESS
-
-      </v-navigation-drawer>
-      <v-main style="height: 250px"></v-main>
-    </v-layout>
 </template>
 
 <script setup>
 
 import CriteriaDisplay from '../../components/ahp/CriteriaDisplay.vue'
+import MatrixDisplay from '../../components/ahp/MatrixDisplay.vue'
 
 </script>
