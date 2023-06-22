@@ -3,11 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     component: () => import('@/layouts/default/Default.vue'),
     children: [
       {
-        path: '',
+        path: '/home',
         name: 'Home',
         // route level code-splitting
         // this generates a separate chunk (about.[hash].js) for this route
@@ -16,6 +16,10 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/ahp',
+    component: () => import('@/layouts/ahp/AHPLayout.vue')
+  }
 ]
 
 const router = createRouter({
