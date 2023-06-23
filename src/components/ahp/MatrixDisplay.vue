@@ -30,10 +30,7 @@
                 </Versus>
             </v-col>
         </v-row>
-    </v-container>    
-
-    
-
+    </v-container>
 </template>
 
 <script setup>
@@ -43,9 +40,21 @@ import { criteria } from '../../state/criteria.js'
 
 import Versus from './Versus.vue'
 
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 const show = ref(false)
+
+const allPainted = computed(() => {
+    let criteriaNumber = criteria.criteriaList.length
+
+    for (let ri = 0; ri < criteriaNumber; ri++) {
+        for (let ci = 0; ci < criteriaNumber; ci++) {
+            if(!matrix.matrixValues[ri].array[ci].painted)
+                return false
+        }
+    }
+    return true
+})
 
 function generateMatrix() {
     let criteriaNumber = criteria.criteriaList.length
