@@ -1,6 +1,10 @@
 <template>
 
-    <v-responsive
+
+<v-container>
+    <v-row>
+        <v-col>
+            <v-responsive
         class="mx-auto"
         max-width="344"
     >
@@ -10,10 +14,16 @@
         v-model="newCriteria"
     ></v-text-field>
   </v-responsive>
+        </v-col>
 
-  <v-btn @click="addCriteria">
-    Add Criteria
-  </v-btn>
+        <v-col>
+              <v-btn @click="addCriteria">
+                Add Criteria
+              </v-btn>
+        </v-col>
+    </v-row>
+</v-container>
+    
 
   <CriteriaList></CriteriaList>
 

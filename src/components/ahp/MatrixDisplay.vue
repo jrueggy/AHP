@@ -1,8 +1,14 @@
 <template>
+    <v-container>
+    <v-row>
+            <v-col>
+                    <v-btn @click="generateMatrix">
+                        Create Matrix
+                    </v-btn>
+            </v-col>
+        </v-row>
+    </v-container>
 
-    <v-btn @click="generateMatrix">
-        Create Matrix
-    </v-btn>
 
     <v-container v-show="show">
         <v-row>
