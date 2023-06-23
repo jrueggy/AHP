@@ -8,8 +8,8 @@
 
             <v-container>
                 <v-row>
-                    <v-col>
-                        <v-card>
+                    <v-col cols = 5>
+                        <v-card color="indigo">
                             
                             <v-card-item>
                                 <div>
@@ -20,8 +20,9 @@
                             </v-card-item>
                         </v-card>
                     </v-col>
-                    <v-col>
-                        <v-card>
+                    <v-col cols="2"></v-col>
+                    <v-col cols="5">
+                        <v-card color="pink">
                             
                             <v-card-item>
                                 <div>
@@ -35,7 +36,7 @@
                 </v-row>
 
                 <v-row>
-                    <v-slider color="red"
+                    <v-slider
                     v-model="importanceIndex" :ticks="labels" :max="8" step="1" show-ticks="always" tick-size="4"></v-slider>
                 </v-row>
 

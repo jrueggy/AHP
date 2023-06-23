@@ -4,23 +4,25 @@
         Create Matrix
     </v-btn>
 
-    <v-container>
+    <v-container v-show="show">
         <v-row>
             <v-col>
 
             </v-col>
             <v-col v-for="criteria in criteria.criteriaList">
-                <div>
-                    {{  criteria }}
-                </div>
+                <v-btn class="text-none" variant="outlined" color="pink">
+                    
+                    {{ criteria }}
+                    
+                </v-btn>
             </v-col>
         </v-row>
         <v-row v-for="row in matrix.matrixValues">
 
             <v-col>
-                <div>
+                <v-btn class="text-none" variant="outlined" color="indigo">
                     {{ row.criteria }}
-                </div>
+                </v-btn>
             </v-col>
 
             <v-col v-for="col in row.array">
@@ -40,6 +42,10 @@ import { matrix } from '../../state/matrix.js'
 import { criteria } from '../../state/criteria.js'
 
 import Versus from './Versus.vue'
+
+import { ref } from 'vue'
+
+const show = ref(false)
 
 function generateMatrix() {
     let criteriaNumber = criteria.criteriaList.length
@@ -73,6 +79,8 @@ function generateMatrix() {
         }
 
     }
+
+    show.value = true
 
 }
 
