@@ -28,7 +28,7 @@ import CriteriaList from './CriteriaList.vue'
 
 import { criteria } from '../../state/criteria.js'
 
-const newCriteria = ref("test")
+const newCriteria = ref("")
 
 
 

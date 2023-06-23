@@ -24,14 +24,13 @@
             </v-col>
 
             <v-col v-for="col in row.array">
-                <v-btn>
-                    {{ col.value }}
-                </v-btn>
+                <Versus :cell=col>
+                </Versus>
             </v-col>
         </v-row>
     </v-container>    
 
-    <Versus show=true></Versus>
+    
 
 </template>
 
@@ -56,14 +55,20 @@ function generateMatrix() {
 
         for (let ci = 0; ci < criteriaNumber; ci++) {
             let val = 0;
-            if(ri == ci) val = 1
+            let pnt = false;
+            if(ri == ci) {
+                val = 1
+                pnt = true
+            }
             
             matrix.matrixValues[ri].array.push({
                 value: val,
                 inverse: true,
-                criteria: criteria.criteriaList[ci],
+                criteriaRow: criteria.criteriaList[ri],
+                criteriaCol: criteria.criteriaList[ci],
                 ci: ci,
-                ri: ri
+                ri: ri,
+                painted: pnt
             })
         }
 
